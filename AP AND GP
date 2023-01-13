@@ -1,0 +1,48 @@
+CHECK IF A GIVEN FLOAT TYPE ARRAY IS A AP OR GP.
+
+
+#include <iostream>
+using namespace std;
+int main() {
+    float arr[10];
+    cout<<"\nENTER A INT ARRAY\n";
+    for(int i=0;i<10;i++) // for input of array
+    {
+        cin>>arr[i];
+    }
+    float m=0;
+    float n=0;
+    float ap=1.0;
+    float gp=1.0;
+    float d= arr[1]-arr[0];
+    float g= arr[1]/arr[0];
+     for (int j=2;j<10 && ap==1.0;j++) //ap
+     { m=arr[j]-arr[j-1];
+       
+       if(m==d)
+         ap=1.0;
+      else 
+         ap=0.0; 
+       
+     }
+     if(ap==1.0)
+        cout<<"its a ap\n";
+     else
+        cout<<"not a ap";
+    for (int j=2;j<10 && gp==1.0;j++) //gp
+     { n=arr[j]/arr[j-1];
+       
+       if(n==g)
+        gp=1.0;
+       else
+        gp=0.0;
+       
+     }
+     if(gp==1.0)
+        cout<<"\nits a gp";
+     else
+        cout<<"\nnot a gp";
+     
+     
+    return 0;
+}
